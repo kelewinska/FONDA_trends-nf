@@ -3,7 +3,7 @@
 #
 # :AUTHOR: Katarzyna Ewa Lewinska
 # :DATE: 17 March 2022
-# :STATUS:          operational
+# :STATUS:          experimental
 # :VERSION: 1.0     based on Fold2Days
 # :UPDATES:         2023-03-17  Monthly composites
 #                   2023-03-20  Filling in from RBF output 16 days

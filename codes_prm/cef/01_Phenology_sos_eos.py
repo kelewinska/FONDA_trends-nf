@@ -3,7 +3,7 @@
 #
 # :AUTHOR: Katarzyna Ewa Lewinska
 # :DATE: 09 March 2023
-# :STATUS:          operational
+# :STATUS:          experimental
 # :VERSION: 1.0
 # :UPDATES:     2023-03-27  pass parameters from the command line; iterate through all tiles in the cube
 #                           Linux-Win path compatibility

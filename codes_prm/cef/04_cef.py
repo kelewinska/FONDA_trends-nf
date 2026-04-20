@@ -3,7 +3,7 @@
 #
 # :AUTHOR: Katarzyna Ewa Lewinska
 # :DATE: 29 March 2023
-# :STATUS:          operational
+# :STATUS:          experimental
 # :VERSION: 1.0
 # :UPDATES:     17 Apr 2026: nf revisited changes 
 # -
