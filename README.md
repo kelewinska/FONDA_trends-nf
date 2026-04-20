@@ -1,11 +1,18 @@
-# Sensitivity of long-term trends in European grasslands to endmembers definition.
+# `revisited` branch of the trends repo
 
-The aim of the FONDA_trends-nf workflow was to automatize repetitive post-processing steps marked in the workflow diagram below. The overarching goal of the study was to compare long-term trends calculated for a selection of test sites using a wide selection of input parameters.  
-The input data of this workflow were 1984-2022 time series of BOA Landsat and Sentinel-2 scenes acquired over 13 sides located across Europe. The Level 1 data used to derive the BOA time series were downloaded from USGS and ESA-Copernicus data repositories and subsequently processed to Level 2 BOA with FORCE. Finally, the data were cross-normalized between sensors to assure consistency of time series. The aforementioned preprocessing, presented in the left portion of the workflow graph, was performed beforehand and was not a part of the FONDA_trends-nf workflow.
+With the updates in FORCE and also advancement in the general remote-sensing knowledge, some data processing steps and approaches featured in the original version of this workflow (`main` branch) are outdated, or inaccurate. Therefore, the `revisited` branch offers some updates, though as of April 2026 they are neither implemented in a form of a nf-workflow, nor provide a complete 'bullet-proof' implementations of updates for all the processing steps. 
 
-The FONDA_trends-nf workflow comprises the following steps:
-- Spectral Mixture Analyses (SMA), Land Surface Phenology and Radial Basis Function filtering performed simultaneously by the means of [FORCE](https://github.com/davidfrantz/force) `force-higher-level` module.  
-- derivation of Start of Season and End of Season Dates (py script)
+The `revisited` solution has been updated to FORCE 3.10.04 and consequently uses the respective structure of the prm files and functionality available in this FORCE distribution. The codes and parameters are not backward-compatible. 
+
+The main changes include, but are not limited to:
+- updated approach to RBF interpolation 
+- Phenology based on PCT (the LSP approach has been deprecated in FORCE)
+
+The workflow/scripts still assumes the input time series to be normalized across sensors (workflow_v1.jpg). This is a major limitation, since such assumption means the complete data pool should be reprocessed, doubling the space requirements (not all applications require normalization and many data users do not wish to work on cross-sensor normalized data). Consequently, the future development should enable sensor-specific unmixing step (workflow_v2.jpg) followed by data aggregation before the LSP and RBF modules. 
+
+The revisited FONDA_trends-nf workflow comprises the following steps:
+- Running `force-higher-level` FORCE module with TSA prm files (four, one run for each endmember) to perform Spectral Mixture Analyses (SMA), Land Surface Phenology and Radial Basis Function filtering performed simultaneously   
+- derivation of Start of Season and End of Season Dates based on the POL sub-module executed on gv (py script)
 - creation of gap-free monthly composites (py script)
 - derivation of Cumulative Endmember Fractions (py script)
 - AR trend analyses (R script)
