@@ -17,7 +17,7 @@ The FONDA_trends-nf workflow comprises the following steps:
 `R_dockr` - Comprises a Dockerfile for the R environment \
 `conda_env` - Comprises a .yml file describing the Python environment \
 `endm` - Comprises an example of a txt file with definition of endmembers used for SMA. Order from left to right: gv, npv, soil, shade \
-`nf` - Comprises the Nextflow workflow \
+`nf` - Comprises the Nextflow workflow 
 
 ### Notes on the Nextflow implementation:
 The workflow was written and executed on local Linux server, hence many variables are hardcoded. Furthermore, the workflow uses local FORCE and R-specific Docker containers available in the local environment. \
