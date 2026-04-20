@@ -289,11 +289,11 @@ for i in range(0, nos):
     nOut = os.path.basename(os.path.splitext((npvtss[0]))[0])
 
     # output paths
-    gvOutP = os.path.join(gvtile, nOut + '_FnFX.tif')
-    npvOutP = os.path.join(npvtile, nOut + '_FnFX.tif')
-    soilOutP = os.path.join(soiltile, nOut + '_FnFX.tif')
-    shOutP = os.path.join(shtile, nOut + '_FnFX.tif')
-    qaOutP = os.path.join(gvtile, nOut + '_FnFX_QA.tif')
+    gvOutP = os.path.join(gvtile, nOut + '_FnF.tif')
+    npvOutP = os.path.join(npvtile, nOut + '_FnF.tif')
+    soilOutP = os.path.join(soiltile, nOut + '_FnF.tif')
+    shOutP = os.path.join(shtile, nOut + '_FnF.tif')
+    qaOutP = os.path.join(gvtile, nOut + '_FnF_QA.tif')
 
     # get rid of the first empty array at axis 2
     gvLS = gvLS[:,:,1:gvLS.shape[2]]

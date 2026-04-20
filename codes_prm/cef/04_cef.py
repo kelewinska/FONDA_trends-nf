@@ -185,7 +185,7 @@ for fl in tiles:
     # save outputs
     cefProfile = SoSDataset.profile
     cefProfile.update(count=gvLS.shape[0])
-    gvcefOut = os.path.join(outTileDir,'gv_cefX.tif')
+    gvcefOut = os.path.join(outTileDir,'gv_cef.tif')
     with rasterio.open(gvcefOut, 'w', **cefProfile) as dst:
         for ith, outbn in enumerate(bandNames):
             dst.set_band_description(ith + 1, str(outbn))
